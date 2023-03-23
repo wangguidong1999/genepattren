@@ -1,0 +1,4 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/genepattern/project_1/project_1.srcs/sources_1/new/static_pattern.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module static_pattern
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/genepattern/project_1/project_1.srcs/sim_1/new/static_pattern_testbench.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module static_pattern_testbench
