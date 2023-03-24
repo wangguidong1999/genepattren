@@ -18,7 +18,6 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-parameter window = 500;
 
 module pointer_pattern(
     input [63:0] current_trace_addr,
@@ -29,4 +28,15 @@ module pointer_pattern(
     output reg pointer_or_not
     );
     
+    always@(posedge clk)
+    begin
+        if (recent_trace_value == current_trace_addr)
+        begin
+            pointer_or_not <= 1'b1;
+        end
+        else
+        begin
+            pointer_or_not <= 1'b0;
+        end
+    end
 endmodule

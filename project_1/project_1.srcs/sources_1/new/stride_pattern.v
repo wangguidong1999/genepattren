@@ -28,14 +28,15 @@ module stride_pattern(
     input [63:0] last_trace_address2,
     
     output reg stride_or_not,
-    output [63:0] stride
+    output reg [63:0] stride
     );
     
     always@(posedge clk)
     begin
         if (last_stride == current_trace_address-last_trace_address2)
         begin
-            stride_or_not = 1'b1;
+            stride_or_not <= 1'b1;
+            stride <= current_trace_address-last_trace_address2;
         end
         else begin
             stride_or_not = 1'b0;

@@ -1,0 +1,321 @@
+/*
+
+Xilinx Vivado v2019.2 (64-bit) [Major: 2019, Minor: 2]
+SW Build: 2708876 on Wed Nov  6 21:40:23 MST 2019
+IP Build: 2700528 on Thu Nov  7 00:09:20 MST 2019
+
+Process ID (PID): 10048
+License: Customer
+
+Current time: 	Fri Mar 24 16:20:44 CST 2023
+Time zone: 	China Standard Time (Asia/Shanghai)
+
+OS: Windows 10
+OS Version: 10.0
+OS Architecture: amd64
+Available processors (cores): 16
+
+Screen size: 3840x2160
+Screen resolution (DPI): 225
+Available screens: 1
+Available disk space: 33 GB
+Default font: family=Dialog,name=Dialog,style=plain,size=27
+
+Java version: 	9.0.4 64-bit
+Java home: 	D:/Vivado/2019.2/tps/win64/jre9.0.4
+Java executable location: 	D:/Vivado/2019.2/tps/win64/jre9.0.4/bin/java.exe
+Java initial memory (-Xms): 	128 MB
+Java maximum memory (-Xmx):	 3 GB
+
+
+User name: 	王贵东
+User home directory: C:/Users/王贵东
+User working directory: E:/genepattern/genepattren/project_1
+User country: 	CN
+User language: 	zh
+User locale: 	zh_CN
+
+RDI_BASEROOT: D:/Vivado
+HDI_APPROOT: D:/Vivado/2019.2
+RDI_DATADIR: D:/Vivado/2019.2/data
+RDI_BINDIR: D:/Vivado/2019.2/bin
+
+Vivado preferences file location: C:/Users/王贵东/AppData/Roaming/Xilinx/Vivado/2019.2/vivado.xml
+Vivado preferences directory: C:/Users/王贵东/AppData/Roaming/Xilinx/Vivado/2019.2/
+Vivado layouts directory: C:/Users/王贵东/AppData/Roaming/Xilinx/Vivado/2019.2/layouts
+PlanAhead jar file location: 	D:/Vivado/2019.2/lib/classes/planAhead.jar
+Vivado log file location: 	E:/genepattern/genepattren/project_1/vivado.log
+Vivado journal file location: 	E:/genepattern/genepattren/project_1/vivado.jou
+Engine tmp dir: 	E:/genepattern/genepattren/project_1/.Xil/Vivado-10048-LAPTOP-7SKM4VBO
+
+Xilinx Environment Variables
+----------------------------
+XILINX: D:/Vivado/2019.2/ids_lite/ISE
+XILINX_DSP: D:/Vivado/2019.2/ids_lite/ISE
+XILINX_PLANAHEAD: D:/Vivado/2019.2
+XILINX_VIVADO: D:/Vivado/2019.2
+XILINX_VIVADO_HLS: D:/Vivado/2019.2
+
+
+GUI allocated memory:	183 MB
+GUI max memory:		3,072 MB
+Engine allocated memory: 892 MB
+
+Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
+
+*/
+
+// TclEventType: START_GUI
+// TclEventType: PROJECT_OPEN_DIALOG
+// Tcl Message: start_gui 
+// TclEventType: PROJECT_OPEN_DIALOG
+// [GUI Memory]: 115 MB (+118378kb) [00:00:06]
+// [Engine Memory]: 598 MB (+475896kb) [00:00:06]
+// bB (cr):  Open Project : addNotify
+// Opening Vivado Project: E:\genepattern\genepattren\project_1\project_1.xpr. Version: Vivado v2019.2 
+// TclEventType: DEBUG_PROBE_SET_CHANGE
+// Tcl Message: open_project E:/genepattern/genepattren/project_1/project_1.xpr 
+// TclEventType: MSGMGR_MOVEMSG
+// TclEventType: FILE_SET_NEW
+// TclEventType: RUN_CURRENT
+// TclEventType: PROJECT_DASHBOARD_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_DASHBOARD_GADGET_NEW
+// TclEventType: PROJECT_DASHBOARD_GADGET_CHANGE
+// TclEventType: PROJECT_NEW
+// Tcl Message: open_project E:/genepattern/genepattren/project_1/project_1.xpr 
+// Tcl Message: INFO: [Project 1-313] Project file moved from 'E:/genepattern/project_1' since last save. 
+// Tcl Message: Scanning sources... Finished scanning sources 
+// Tcl Message: INFO: [IP_Flow 19-234] Refreshing IP repositories INFO: [IP_Flow 19-1704] No user IP repositories specified 
+// TclEventType: PROJECT_NEW
+// [Engine Memory]: 844 MB (+225936kb) [00:00:09]
+// [GUI Memory]: 129 MB (+8409kb) [00:00:09]
+// [GUI Memory]: 148 MB (+13103kb) [00:00:10]
+// WARNING: HEventQueue.dispatchEvent() is taking  1812 ms.
+// Tcl Message: INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Vivado/2019.2/data/ip'. 
+// [Engine Memory]: 893 MB (+7176kb) [00:00:11]
+// HMemoryUtils.trashcanNow. Engine heap size: 893 MB. GUI used memory: 87 MB. Current time: 3/24/23, 4:20:45 PM CST
+// Project name: project_1; location: E:/genepattern/genepattren/project_1; part: xc7vx485tffg1157-1
+dismissDialog("Open Project"); // bB (cr)
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, static_pattern (static_pattern.v)]", 1, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, pointer_pattern (pointer_pattern.v)]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, pointer_pattern (pointer_pattern.v)]", 2, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, pointer_pattern (pointer_pattern.v)]", 2, false); // B (F, cr)
+selectCodeEditor("pointer_pattern.v", 1246, 475); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 195, 475); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 1338, 519); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 789, 560); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 629, 405); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 588, 500); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 574, 580); // ch (w, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 913 MB. GUI used memory: 89 MB. Current time: 3/24/23, 4:24:25 PM CST
+// Elapsed time: 359 seconds
+selectCodeEditor("pointer_pattern.v", 284, 691); // ch (w, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 937 MB. GUI used memory: 89 MB. Current time: 3/24/23, 4:27:20 PM CST
+// Elapsed time: 123 seconds
+selectCodeEditor("pointer_pattern.v", 435, 206); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("pointer_pattern.v", 544, 637); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Elapsed time: 256 seconds
+selectCodeEditor("pointer_pattern.v", 210, 710); // ch (w, cr)
+// Elapsed time: 20 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, stride_pattern (stride_pattern.v)]", 3, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, stride_pattern (stride_pattern.v)]", 3, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("stride_pattern.v", 498, 505); // ch (w, cr)
+// [Engine Memory]: 941 MB (+3404kb) [00:13:20]
+// Elapsed time: 48 seconds
+selectCodeEditor("stride_pattern.v", 267, 211); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectCodeEditor("stride_pattern.v", 470, 463); // ch (w, cr)
+selectCodeEditor("stride_pattern.v", 318, 453); // ch (w, cr)
+selectCodeEditor("stride_pattern.v", 446, 490); // ch (w, cr)
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+// Elapsed time: 527 seconds
+selectCodeEditor("pointer_pattern.v", 469, 595); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 542, 607); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 466, 572); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 437, 549); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 437, 549, false, false, false, false, true); // ch (w, cr) - Double Click
+selectCodeEditor("pointer_pattern.v", 389, 507); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 631, 440); // ch (w, cr)
+// Elapsed time: 83 seconds
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+// HMemoryUtils.trashcanNow. Engine heap size: 969 MB. GUI used memory: 92 MB. Current time: 3/24/23, 4:45:26 PM CST
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // E (f, c)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File..."); // ai (ao, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 42 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "struct_member_pattern"); // ac (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 48 seconds
+dismissDialog("Add Sources"); // c (cr)
+// Tcl Message: close [ open E:/genepattern/genepattren/project_1/project_1.srcs/sources_1/new/struct_member_pattern.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files E:/genepattern/genepattren/project_1/project_1.srcs/sources_1/new/struct_member_pattern.v 
+// I (cr): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton (A, H)
+dismissDialog("Define Module"); // I (cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, struct_member_pattern (struct_member_pattern.v)]", 4, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, struct_member_pattern (struct_member_pattern.v)]", 4, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("struct_member_pattern.v", 243, 660); // ch (w, cr)
+// Elapsed time: 42 seconds
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "pointer_pattern.v", 1); // i (h, cr)
+selectCodeEditor("pointer_pattern.v", 451, 455); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 168, 328); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 1153, 293); // ch (w, cr)
+typeControlKey((HResource) null, "pointer_pattern.v", 'c'); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "struct_member_pattern.v", 2); // i (h, cr)
+typeControlKey((HResource) null, "struct_member_pattern.v", 'v'); // ch (w, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, static_pattern (static_pattern.v)]", 1, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, static_pattern (static_pattern.v)]", 1, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, static_pattern (static_pattern.v)]", 1, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("static_pattern.v", 277, 499); // ch (w, cr)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, pointer_pattern (pointer_pattern.v)]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, stride_pattern (stride_pattern.v)]", 3, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, stride_pattern (stride_pattern.v)]", 3, false, false, false, false, false, true); // B (F, cr) - Double Click
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectCodeEditor("struct_member_pattern.v", 1147, 659); // ch (w, cr)
+// Elapsed time: 57 seconds
+selectCodeEditor("struct_member_pattern.v", 150, 692); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 147, 730); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 147, 703); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 152, 725); // ch (w, cr)
+// Elapsed time: 20 seconds
+selectCodeEditor("struct_member_pattern.v", 584, 697); // ch (w, cr)
+// Elapsed time: 144 seconds
+selectCodeEditor("struct_member_pattern.v", 389, 521); // ch (w, cr)
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "pointer_pattern.v", 1); // i (h, cr)
+selectCodeEditor("pointer_pattern.v", 294, 496); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 426, 531); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 228, 481); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 470, 538); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 309, 497); // ch (w, cr)
+// Elapsed time: 24 seconds
+selectCodeEditor("pointer_pattern.v", 147, 297); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 350, 308); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 438, 339); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 388, 398); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 428, 319); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 407, 417); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 404, 395); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("pointer_pattern.v", 362, 416); // ch (w, cr)
+maximizeFrame(RDIResource.RDIViews_PROPERTIES, "Properties"); // aA (aL, cr)
+selectCodeEditor("pointer_pattern.v", 321, 438); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 320, 433); // ch (w, cr)
+selectCodeEditor("pointer_pattern.v", 429, 301); // ch (w, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "struct_member_pattern.v", 2); // i (h, cr)
+typeControlKey((HResource) null, "struct_member_pattern.v", 'v'); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 386, 756); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 379, 769); // ch (w, cr)
+// Elapsed time: 10 seconds
+selectCodeEditor("struct_member_pattern.v", 917, 374); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 535, 655); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 517, 545); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 193, 490); // ch (w, cr)
+// Elapsed time: 30 seconds
+selectCodeEditor("struct_member_pattern.v", 325, 538); // ch (w, cr)
+typeControlKey((HResource) null, "struct_member_pattern.v", 'c'); // ch (w, cr)
+// Elapsed time: 12 seconds
+selectCodeEditor("struct_member_pattern.v", 485, 536); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 521, 602); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 601, 690); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 120, 678); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 695, 650); // ch (w, cr)
+// Elapsed time: 182 seconds
+selectCodeEditor("struct_member_pattern.v", 1015, 518); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 1032, 749); // ch (w, cr)
+selectCodeEditor("struct_member_pattern.v", 963, 792); // ch (w, cr)
+// Elapsed time: 105 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 969 MB. GUI used memory: 90 MB. Current time: 3/24/23, 5:15:28 PM CST
+// Elapsed time: 2231 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, struct_member_pattern (struct_member_pattern.v)]", 4, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, struct_member_pattern (struct_member_pattern.v)]", 4, false); // B (F, cr)
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // B
+selectTree(PAResourceEtoH.FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE, "[, Project Manager, Add Sources]", 2, false); // u (O, cr)
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+// c (cr): Add Sources: addNotify
+selectButton("NEXT", "Next >"); // JButton (j, c)
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // E (f, c)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT, "Add Files..."); // ai (ao, c)
+dismissFileChooser();
+selectButton(PAResourceQtoS.SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE, "Add"); // E (f, c)
+selectMenuItem(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File..."); // ai (ao, c)
+// F (c): Create Source File: addNotify
+// Elapsed time: 16 seconds
+setText(PAResourceAtoD.CreateSrcFileDialog_FILE_NAME, "pointer_chase_pattern"); // ac (Q, F)
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (F)
+dismissDialog("Create Source File"); // F (c)
+selectButton("FINISH", "Finish"); // JButton (j, c)
+// 'h' command handler elapsed time: 27 seconds
+dismissDialog("Add Sources"); // c (cr)
+// Tcl Message: close [ open E:/genepattern/genepattren/project_1/project_1.srcs/sources_1/new/pointer_chase_pattern.v w ] 
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: add_files E:/genepattern/genepattren/project_1/project_1.srcs/sources_1/new/pointer_chase_pattern.v 
+// I (cr): Define Module: addNotify
+selectButton(RDIResource.BaseDialog_OK, "OK"); // a (I)
+// TclEventType: FILE_SET_CHANGE
+selectButton("OptionPane.button", "Yes"); // JButton (A, H)
+dismissDialog("Define Module"); // I (cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// Tcl Message: update_compile_order -fileset sources_1 
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, pointer_chase_pattern (pointer_chase_pattern.v)]", 2, false); // B (F, cr)
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, pointer_chase_pattern (pointer_chase_pattern.v)]", 2, false, false, false, false, false, true); // B (F, cr) - Double Click
+selectCodeEditor("pointer_chase_pattern.v", 486, 262); // ch (w, cr)
+selectCodeEditor("pointer_chase_pattern.v", 280, 653); // ch (w, cr)
+// Elapsed time: 496 seconds
+selectCodeEditor("pointer_chase_pattern.v", 598, 350); // ch (w, cr)
+// Elapsed time: 13 seconds
+selectCodeEditor("pointer_chase_pattern.v", 378, 697); // ch (w, cr)
+selectCodeEditor("pointer_chase_pattern.v", 340, 660); // ch (w, cr)
+// HMemoryUtils.trashcanNow. Engine heap size: 969 MB. GUI used memory: 90 MB. Current time: 3/24/23, 5:45:30 PM CST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 267503 ms. Increasing delay to 802509 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  1362 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 969 MB. GUI used memory: 89 MB. Current time: 3/24/23, 6:15:34 PM CST
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 4 ms. Decreasing delay to 2004 ms.
+// WARNING: HEventQueue.dispatchEvent() is taking  2519616 ms.
+// WARNING: HSwingWorker (Refresh Filesets Swing Worker) is taking 2520117 ms. Increasing delay to 7560351 ms.
+// HMemoryUtils.trashcanNow. Engine heap size: 969 MB. GUI used memory: 88 MB. Current time: 3/24/23, 7:11:43 PM CST
+// Elapsed time: 5254 seconds
+selectButton(RDIResourceCommand.RDICommands_SAVE_FILE, (String) null); // E (f, cr)
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
