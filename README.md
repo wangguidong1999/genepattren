@@ -1,2 +1,2 @@
 # Genepattren
-Genepattern is a project that implements the recognition algorithm of memory access patterns by hardware.
+All codes in this branch are typed by nn.
