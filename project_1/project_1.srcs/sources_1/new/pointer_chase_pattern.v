@@ -25,7 +25,7 @@ module pointer_chase_pattern(
     input enable,
     input current_trace_address,
     input same_PC_last_address,
-    input last_offset,
+    input last_offset
     
     );
 endmodule
