@@ -26,7 +26,34 @@ module pointer_pattern(
     input enable,
     input clk,
     
-    output reg pointer_or_not
+    input [15:0] pointer_confidence_in, //initial value = 8, low bound (false) <= 3  , upper bound >= 512(9bit);
+    output reg [15:0] pointer_confidence_out //[9:0] confidence,  [15] true, [14] false
     );
+    
+        always@(posedge clk)
+    begin
+        if (current_trace_addr == recent_trace_value)
+        begin
+            pointer_confidence_out  <= pointer_confidence_in + 1'b1;
+            if (pointer_confidence_out [9] == 1'b1 )//threshhold>=512, 9bit
+                begin
+                    pointer_confidence_out[15] <= 1'b1;
+                    pointer_confidence_out[14] <= 1'b0;
+                end
+        end
+        
+        else begin
+            if (pointer_confidence_out [8:0] > 9'd3)
+            begin
+                pointer_confidence_out [8:0] <= pointer_confidence_in [8:0] >> 1 ;
+            end
+            
+            if (pointer_confidence_out [8:0] <= 9'd3)
+            begin
+                pointer_confidence_out[14] <= 1'b1;
+                pointer_confidence_out[15] <= 1'b0;
+            end
+        end
+    end
     
 endmodule

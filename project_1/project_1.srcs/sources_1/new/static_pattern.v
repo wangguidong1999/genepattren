@@ -26,18 +26,33 @@ module static_pattern(
     input enable,
     input clk,
     
-    output reg static_or_not
+    input [15:0] static_confidence_in, //initial value = 8, low bound (false) <= 3  , upper bound >= 512(9bit);
+    output reg [15:0] static_confidence_out //[9:0] confidence,  [15] true, [14] false
     );
     
     always@(posedge clk) 
     begin
         if(current_trace_addr == last_trace_addr)
         begin
-            static_or_not = 1'b1; 
+            static_confidence_out  <= static_confidence_in + 1'b1;
+            if (static_confidence_out[9] == 1'b1 )//threshhold>=512, 9bit
+             begin
+                 static_confidence_out[15] <= 1'b1;
+                 static_confidence_out[14] <= 1'b0;
+             end
         end
-        else 
-        begin
-            static_or_not = 1'b0;
+        
+        else begin
+            if (static_confidence_out[8:0] > 9'd3)
+            begin
+                static_confidence_out[8:0] <= static_confidence_in [8:0] >> 1 ;
+            end
+            
+            if (static_confidence_out[8:0] <= 9'd3)
+            begin
+                static_confidence_out[14] <= 1'b1;
+                static_confidence_out[15] <= 1'b0;
+            end
         end
     end
 endmodule
