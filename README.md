@@ -6,12 +6,12 @@ GenePattern is a hardware-based system for recognizing memory access patterns. T
 
 ## Features
 
-Verilog-based implementation for efficient hardware performance 
+- Verilog-based implementation for efficient hardware performance 
 
-Real-time analysis of memory access patterns 
+- Real-time analysis of memory access patterns 
 
-Flexible configuration options to customize analysis parameters 
+- Flexible configuration options to customize analysis parameters 
 
-Integration with other hardware systems and embedded devices 
+- Integration with other hardware systems and embedded devices 
 
 
