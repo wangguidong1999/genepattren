@@ -3,7 +3,11 @@
 <!--                                                         -->
 <!-- Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.   -->
 
+<<<<<<< HEAD
 <Project Version="7" Minor="44" Path="D:/vivado_project/genepattren/project_1/project_1.xpr">
+=======
+<Project Version="7" Minor="44" Path="E:/genepattern/genepattren/project_1/project_1.xpr">
+>>>>>>> 0fd8e00f05869baa2ed36444c428994786910fe6
   <DefaultLaunch Dir="$PRUNDIR"/>
   <Configuration>
     <Option Name="Id" Val="406a81659f6a45b5b63fd4e00573db78"/>
@@ -81,7 +85,11 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+<<<<<<< HEAD
       <File Path="$PSRCDIR/sources_1/new/circular_queue.v">
+=======
+      <File Path="$PSRCDIR/sources_1/new/struct_member_pattern.v">
+>>>>>>> 0fd8e00f05869baa2ed36444c428994786910fe6
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
@@ -89,6 +97,7 @@
           <Attr Name="UsedIn" Val="simulation"/>
         </FileInfo>
       </File>
+<<<<<<< HEAD
       <File Path="$PSRCDIR/sources_1/new/struct_pointer_pattern.v">
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
@@ -98,6 +107,9 @@
         </FileInfo>
       </File>
       <File Path="$PSRCDIR/sources_1/new/pointer_array_pattern.v">
+=======
+      <File Path="$PSRCDIR/sources_1/new/pointer_chase_pattern.v">
+>>>>>>> 0fd8e00f05869baa2ed36444c428994786910fe6
         <FileInfo>
           <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>

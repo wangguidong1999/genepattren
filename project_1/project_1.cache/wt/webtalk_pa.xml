@@ -3,7 +3,11 @@
 <!--The data in this file is primarily intended for consumption by Xilinx tools.
 The structure and the elements are likely to change over the next few releases.
 This means code written to parse this file will need to be revisited each subsequent release.-->
+<<<<<<< HEAD
 <application name="pa" timeStamp="Thu Mar 23 22:57:39 2023">
+=======
+<application name="pa" timeStamp="Mon Mar 27 14:06:01 2023">
+>>>>>>> 0fd8e00f05869baa2ed36444c428994786910fe6
 <section name="Project Information" visible="false">
 <property name="ProjectID" value="c72e7dcf4eff4915a66cc919cef19daa" type="ProjectID"/>
 <property name="ProjectIteration" value="1" type="ProjectIteration"/>
@@ -17,7 +21,7 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="ImplStrategy" value="Vivado Implementation Defaults" type="ImplStrategy"/>
 </item>
 <item name="Java Command Handlers">
-<property name="AddSources" value="5" type="JavaHandler"/>
+<property name="AddSources" value="8" type="JavaHandler"/>
 <property name="NewProject" value="3" type="JavaHandler"/>
 <property name="OpenProject" value="3" type="JavaHandler"/>
 <property name="SetTopNode" value="1" type="JavaHandler"/>
@@ -29,12 +33,18 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="AddSrcWizard_SPECIFY_HDL_NETLIST_BLOCK_DESIGN" value="1" type="GuiHandlerData"/>
 <property name="AddSrcWizard_SPECIFY_OR_CREATE_CONSTRAINT_FILES" value="1" type="GuiHandlerData"/>
 <property name="AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES" value="1" type="GuiHandlerData"/>
-<property name="BaseDialog_OK" value="8" type="GuiHandlerData"/>
+<property name="BaseDialog_OK" value="12" type="GuiHandlerData"/>
 <property name="CmdMsgDialog_MESSAGES" value="3" type="GuiHandlerData"/>
 <property name="CmdMsgDialog_OK" value="2" type="GuiHandlerData"/>
+<<<<<<< HEAD
 <property name="CreateSrcFileDialog_FILE_NAME" value="4" type="GuiHandlerData"/>
 <property name="FileSetPanel_FILE_SET_PANEL_TREE" value="85" type="GuiHandlerData"/>
 <property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="9" type="GuiHandlerData"/>
+=======
+<property name="CreateSrcFileDialog_FILE_NAME" value="6" type="GuiHandlerData"/>
+<property name="FileSetPanel_FILE_SET_PANEL_TREE" value="95" type="GuiHandlerData"/>
+<property name="FlowNavigatorTreePanel_FLOW_NAVIGATOR_TREE" value="12" type="GuiHandlerData"/>
+>>>>>>> 0fd8e00f05869baa2ed36444c428994786910fe6
 <property name="GettingStartedView_CREATE_NEW_PROJECT" value="3" type="GuiHandlerData"/>
 <property name="GettingStartedView_OPEN_PROJECT" value="3" type="GuiHandlerData"/>
 <property name="HCodeEditor_SEARCH_TEXT_COMBO_BOX" value="1" type="GuiHandlerData"/>
@@ -45,12 +55,14 @@ This means code written to parse this file will need to be revisited each subseq
 <property name="PACommandNames_LICENSE_MANAGE" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_SET_AS_TOP" value="1" type="GuiHandlerData"/>
 <property name="PACommandNames_SIMULATION_RUN_BEHAVIORAL" value="4" type="GuiHandlerData"/>
+<property name="PAViews_CODE" value="6" type="GuiHandlerData"/>
 <property name="PAViews_PROJECT_SUMMARY" value="1" type="GuiHandlerData"/>
 <property name="ProjectNameChooser_CHOOSE_PROJECT_LOCATION" value="3" type="GuiHandlerData"/>
-<property name="RDICommands_SAVE_FILE" value="10" type="GuiHandlerData"/>
+<property name="RDICommands_SAVE_FILE" value="17" type="GuiHandlerData"/>
 <property name="RDIViews_WAVEFORM_VIEWER" value="8" type="GuiHandlerData"/>
-<property name="SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE" value="5" type="GuiHandlerData"/>
-<property name="SrcChooserPanel_CREATE_FILE" value="4" type="GuiHandlerData"/>
+<property name="SrcChooserPanel_ADD_HDL_AND_NETLIST_FILES_TO_YOUR_PROJECT" value="1" type="GuiHandlerData"/>
+<property name="SrcChooserPanel_ADD_OR_CREATE_SOURCE_FILE" value="8" type="GuiHandlerData"/>
+<property name="SrcChooserPanel_CREATE_FILE" value="6" type="GuiHandlerData"/>
 <property name="SrcMenu_IP_HIERARCHY" value="1" type="GuiHandlerData"/>
 <property name="WaveformNameTree_WAVEFORM_NAME_TREE" value="1" type="GuiHandlerData"/>
 <property name="WaveformView_GOTO_LAST_TIME" value="2" type="GuiHandlerData"/>
