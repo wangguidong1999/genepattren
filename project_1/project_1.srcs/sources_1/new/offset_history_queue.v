@@ -31,8 +31,8 @@ module offset_history_queue(
   output empty
 );
 
-  parameter QSIZE = 500;  // queue size
-  parameter ADDR_WIDTH = $clog2(QSIZE);
+  parameter QSIZE = 512;  // queue size
+  parameter ADDR_WIDTH = $clog2(QSIZE); // 计算QSIZE的2的对数
   
   reg [63:0] q [0:QSIZE-1]; // queue data
   reg [ADDR_WIDTH-1:0] head = 0;  // head index

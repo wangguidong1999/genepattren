@@ -23,9 +23,8 @@
 module indirect_pattern(
     input [63:0] current_trace_addr,
     input [63:0] last_trace_addr,//store the last trace of every PC, last_trace_addr is the last trace address of the same PC 
-    input [63:0] recent_trace_value,
-    input [63:0] recent_last_trace_value,
-    input history_trace_is_stride,
+    input [63:0] recent_trace_value,//history_trace_is_stride1
+    input [63:0] recent_last_trace_value,//history_trace_is_stride2
     input enable,
     input clk,
     

@@ -34,7 +34,8 @@ module struct_pointer_pattern(
      
     always@(posedge clk) 
     begin
-        if(current_trace_addr - recent_trace_value <= OFFSET  &&  current_trace_addr - recent_trace_value <= OFFSET)
+        if((current_trace_addr - recent_trace_value >= 0 && current_trace_addr - recent_trace_value <= OFFSET)
+        || (recent_trace_value - current_trace_addr >= 0 &&  recent_trace_value - current_trace_addr <= OFFSET))
         begin
             struct_pointer_confidence_out  <= struct_pointer_confidence_in + 1'b1;
             if (struct_pointer_confidence_out [9] == 1'b1 )//threshhold>=512, 9bit

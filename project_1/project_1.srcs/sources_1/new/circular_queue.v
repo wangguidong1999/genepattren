@@ -31,7 +31,7 @@ module FIFO_queue (
   output empty
 );
 
-  parameter QSIZE = 500;  // queue size
+  parameter QSIZE = 512;  // queue size
   parameter ADDR_WIDTH = $clog2(QSIZE);
   
   reg [63:0] q [0:QSIZE-1]; // queue data

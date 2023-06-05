@@ -27,11 +27,11 @@ module stride_pattern(
     input [63:0] last_stride,
     input [63:0] last_trace_address2,
         
-    output [63:0] stride,
+    output reg [63:0] stride,
     
     input [15:0] stride_confidence_in, //initial value = 8, low bound (false) <= 3  , upper bound >= 512(9bit);
     output reg [15:0] stride_confidence_out //[9:0] confidence,  [15] true, [14] false
-
+    
     );
     
     always@(posedge clk)
@@ -39,6 +39,7 @@ module stride_pattern(
         if (last_stride == current_trace_address-last_trace_address2)
         begin
             stride_confidence_out  <= stride_confidence_in + 1'b1;
+            stride <= last_stride;
             if (stride_confidence_out[9] == 1'b1 )//threshhold>=512, 9bit
              begin
                  stride_confidence_out[15] <= 1'b1;
