@@ -1,0 +1,4 @@
+
+*** Running vivado
+    with args -log GenePattern.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source GenePattern.tcl
+

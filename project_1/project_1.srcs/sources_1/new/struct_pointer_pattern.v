@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module struct_struct_pointer_pattern(
+module struct_pointer_pattern(
     input [63:0] current_trace_addr,
     input [63:0] recent_trace_value,
     input enable,

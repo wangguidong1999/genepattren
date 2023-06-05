@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2019.2 (64-bit)
+# SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
+# IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
+# Start of session at: Sun May 28 23:31:18 2023
+# Process ID: 730132
+# Current directory: D:/vivado_project/genepattren/project_1/project_1.runs/synth_1
+# Command line: vivado.exe -log GenePattern.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source GenePattern.tcl
+# Log file: D:/vivado_project/genepattren/project_1/project_1.runs/synth_1/GenePattern.vds
+# Journal file: D:/vivado_project/genepattren/project_1/project_1.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source GenePattern.tcl -notrace
