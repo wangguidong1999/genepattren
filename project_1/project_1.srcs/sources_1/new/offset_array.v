@@ -11,6 +11,7 @@
 // Tool Versions: 
 // Description: 
 // 先进先出的循环数组
+//todo:输入只通过top 模块连接，offset都是current_trace_addr - last_trace_addr
 // Dependencies: 
 // 
 // Revision:
