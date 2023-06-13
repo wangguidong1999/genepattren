@@ -11,7 +11,7 @@
 // Tool Versions: 
 // Description: 
 // 先进先出的循环数组
-//todo:输入只通过top 模块连接，offset都是current_trace_addr - last_trace_addr
+//todo:输入只通过top 模块连接，offset都是current_trace_addr - last_trace_addr；
 // Dependencies: 
 // 
 // Revision:
@@ -21,32 +21,30 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module offset_array#(parameter WIDTH = 64,parameter ASIZE = 512)
-(clk, reset, add_element, read, data_in, data_out);
+module offset_array#(parameter WIDTH = 64,parameter ASIZE = 512, parameter ROW_SIZE= 64'd65536)
+(clk, reset, add_element, read, data_in, data_out,PC);
     input wire clk;
     input wire reset;
     input wire add_element;
     input wire read;
     input wire [WIDTH-1:0]data_in;
+    input wire [WIDTH-1:0]PC;
     output reg [WIDTH-1:0]data_out;
     
-    reg [WIDTH-1:0] array [0:ASIZE-1];
-    reg [WIDTH-1:0] head;
+    reg [WIDTH-1:0] array [0:ROW_SIZE-1][0:ASIZE-1];
     reg [WIDTH-1:0] tail;
 
-    reg [WIDTH-1:0] next_tail;
-    reg read_count;
+    reg [WIDTH-1:0] read_count;
     always@(posedge clk)
     begin
         if (reset)
         begin
-            head <= 0;
             tail <= 0;
             read_count <= 0;
         end
         if (add_element)
         begin
-            array[tail] <= data_in;
+            array[PC][tail] <= data_in;
             tail <= (tail+1)%ASIZE;
         end
         if (read_count == ASIZE)
@@ -55,7 +53,7 @@ module offset_array#(parameter WIDTH = 64,parameter ASIZE = 512)
         end
         if (read)
         begin
-            data_out <= array[read_count];
+            data_out <= array[PC][read_count];
             read_count = read_count+1;
         end
     end
