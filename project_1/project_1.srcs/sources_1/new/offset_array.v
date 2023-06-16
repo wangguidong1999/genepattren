@@ -21,7 +21,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module offset_array#(parameter WIDTH = 64,parameter ASIZE = 512, parameter PC_SIZE= 64'd1024, parameter A_WIDTH=$clog2(ASIZE))
+module offset_array#(parameter WIDTH = 64,parameter ASIZE = 128, parameter PC_SIZE= 64'd1024, parameter A_WIDTH=$clog2(ASIZE))
 (clk, reset, add_element, read, data_in, data_out,PC,end_add, end_reset,end_read);
     input wire clk;
     input wire reset;
