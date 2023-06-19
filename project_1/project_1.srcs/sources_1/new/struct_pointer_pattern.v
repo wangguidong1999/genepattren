@@ -57,12 +57,12 @@ module struct_pointer_pattern#(parameter OFFSET = 32768)
         end
         2'b01:
         begin
-            if (struct_pointer_confidence_out [8:0] > 9'd3)
+            if (struct_pointer_confidence_in[8:0] > 9'd3)
             begin
                 struct_pointer_confidence_out [8:0] <= struct_pointer_confidence_in [8:0] >> 1 ;
             end
             
-            if (struct_pointer_confidence_out [8:0] <= 9'd3)
+            if (struct_pointer_confidence_in[8:0] <= 9'd3)
             begin
                 struct_pointer_confidence_out[14] <= 1'b1;
                 struct_pointer_confidence_out[15] <= 1'b0;

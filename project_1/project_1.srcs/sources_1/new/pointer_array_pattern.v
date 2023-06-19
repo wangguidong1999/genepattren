@@ -22,7 +22,7 @@
 
 module pointer_array_pattern#(parameter window = 500,window_width = $clog2(window),PC_SIZE = 1024,PC_WIDTH=$clog2(PC_SIZE))
 (current_trace_addr,recent_trace_value,recent_trace_value_PC,trace_value_PC_confidence,enable,clk,reset,
-pointer_array_confidence_in,pointer_array_confidence_out,finish,begin_find_PC);
+pointer_array_confidence_in,pointer_array_confidence_out,finish);
     input wire [63:0] current_trace_addr;
     input wire [63:0] recent_trace_value;//这里要传进的是一系列recent_trace_value
     input wire [63:0] recent_trace_value_PC;// value值源自的指令PC,可以和value一起存为128位数
@@ -33,7 +33,6 @@ pointer_array_confidence_in,pointer_array_confidence_out,finish,begin_find_PC);
     input wire [15:0] pointer_array_confidence_in;
     output reg [15:0] pointer_array_confidence_out;
     output reg finish;
-    output reg begin_find_PC;
     reg [1:0] state;
     reg [window_width:0] count_window;
     reg [PC_WIDTH:0] count_find_PC;
@@ -45,7 +44,6 @@ pointer_array_confidence_in,pointer_array_confidence_out,finish,begin_find_PC);
             count_window <= 0;
             pointer_array_confidence_out <= 0;
             finish <= 0;
-            begin_find_PC <= 0;
         end
         case(state)
             2'b00://指针型判断，在recent_trace_value结构中搜索是否曾读取过等于该地址的值的trace

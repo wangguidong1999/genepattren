@@ -60,11 +60,11 @@ module pointer_pattern#(parameter window = 500)
             end
             2'b01:
             begin
-                if (pointer_confidence_out [8:0] > 9'd3)
+                if (pointer_confidence_in[8:0] > 9'd3)
                 begin
                     pointer_confidence_out [8:0] <= pointer_confidence_in [8:0] >> 1 ;
                 end
-                if (pointer_confidence_out [8:0] <= 9'd3)
+                if (pointer_confidence_in[8:0] <= 9'd3)
                 begin
                     pointer_confidence_out[14] <= 1'b1;
                     pointer_confidence_out[15] <= 1'b0;

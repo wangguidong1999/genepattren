@@ -57,11 +57,11 @@ module static_pattern(current_trace_addr,last_trace_addr,enable,clk,reset,static
         end
         2'b01:
         begin
-            if (static_confidence_out[8:0] > 9'd3)
+            if (static_confidence_in[8:0] > 9'd3)
             begin
                 static_confidence_out[8:0] <= static_confidence_in [8:0] >> 1 ;
             end
-            else if (static_confidence_out[8:0] <= 9'd3)
+            else if (static_confidence_in[8:0] <= 9'd3)
             begin
                 static_confidence_out[14] <= 1'b1;
                 static_confidence_out[15] <= 1'b0;

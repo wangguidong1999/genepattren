@@ -58,12 +58,12 @@ module pointer_chase_pattern(last_same_PC_value,current_trace_addr,offset,enable
         end
         2'b01:
         begin
-            if (pointer_chase_confidence_out [8:0] > 9'd3)
+            if (pointer_chase_confidence_in[8:0] > 9'd3)
             begin
                 pointer_chase_confidence_out [8:0] <= pointer_chase_confidence_in [8:0] >> 1 ;
             end
             
-            if (pointer_chase_confidence_out [8:0] <= 9'd3)
+            if (pointer_chase_confidence_in[8:0] <= 9'd3)
             begin
                 pointer_chase_confidence_out[14] <= 1'b1;
                 pointer_chase_confidence_out[15] <= 1'b0;

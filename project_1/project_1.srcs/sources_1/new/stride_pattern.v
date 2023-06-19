@@ -41,7 +41,7 @@ module stride_pattern(clk,enable,reset,current_trace_address,last_stride,last_tr
         begin
             state <= 2'b00;
             finish <= 0;
-            confidence_out <= 0;
+            stride_confidence_out <= 0;
         end
         case(state)
         2'b00:
@@ -60,12 +60,12 @@ module stride_pattern(clk,enable,reset,current_trace_address,last_stride,last_tr
         end
         2'b01:
         begin
-            if (stride_confidence_out[8:0] > 9'd3)
+            if (stride_confidence_in[8:0] > 9'd3)
             begin
                 stride_confidence_out[8:0] <= stride_confidence_in [8:0] >> 1 ;
             end
             
-            if (stride_confidence_out[8:0] <= 9'd3)
+            if (stride_confidence_in[8:0] <= 9'd3)
             begin
                 stride_confidence_out[14] <= 1'b1;
                 stride_confidence_out[15] <= 1'b0;
