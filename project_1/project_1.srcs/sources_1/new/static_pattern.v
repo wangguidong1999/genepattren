@@ -21,13 +21,13 @@
 
 
 module static_pattern(current_trace_addr,last_trace_addr,enable,clk,reset,static_confidence_in,static_confidence_out,finish);
-    input [63:0] current_trace_addr;
-    input [63:0] last_trace_addr;
-    input enable;
-    input clk;
-    input reset;
+    input wire [63:0] current_trace_addr;
+    input wire [63:0] last_trace_addr;
+    input wire enable;
+    input wire clk;
+    input wire reset;
     
-    input [15:0] static_confidence_in; //initial value = 8, low bound (false) <= 3  , upper bound >= 512(9bit);
+    input wire [15:0] static_confidence_in; //initial value = 8, low bound (false) <= 3  , upper bound >= 512(9bit);
     output reg [15:0] static_confidence_out; //[9:0] confidence,  [15] true, [14] false
     output reg finish;
 

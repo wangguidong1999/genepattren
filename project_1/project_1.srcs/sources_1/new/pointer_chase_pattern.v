@@ -21,14 +21,14 @@
 
 
 module pointer_chase_pattern(last_same_PC_value,current_trace_addr,offset,enable,clk,reset,pointer_chase_confidence_in,pointer_chase_confidence_out,finish);
-    input [63:0] last_same_PC_value;//可能需要一定时间搜索
-    input [63:0] current_trace_addr;
-    input [63:0] offset;
-    input enable;
-    input clk;
-    input reset;
+    input wire [63:0] last_same_PC_value;//可能需要一定时间搜索
+    input wire [63:0] current_trace_addr;
+    input wire [63:0] offset;
+    input wire enable;
+    input wire clk;
+    input wire reset;
     
-    input [15:0] pointer_chase_confidence_in;//initial value = 8, low bound (false) <= 3  , upper bound >= 512(9bit);
+    input wire [15:0] pointer_chase_confidence_in;//initial value = 8, low bound (false) <= 3  , upper bound >= 512(9bit);
     output reg [15:0] pointer_chase_confidence_out; //[9:0] confidence,  [15] true, [14] false
     output reg finish;
     
