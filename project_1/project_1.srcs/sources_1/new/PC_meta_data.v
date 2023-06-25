@@ -91,7 +91,6 @@ static_confidence_in,static_finish,stride_confidence_in,stride_finish,struct_poi
                 array[index][2] <= current_trace_value;
                 state <= 2'b10;
             end
-            index <= index + 1;
         end
         2'b10://½ÓÊÕconfidence
         begin
@@ -135,6 +134,7 @@ static_confidence_in,static_finish,stride_confidence_in,stride_finish,struct_poi
         end
         2'b11:
         begin
+            index <= index + 1;
             add_finish <= 1;
         end
         endcase

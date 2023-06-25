@@ -21,12 +21,12 @@
 
 
 module pointer_array_pattern#(parameter window = 500,window_width = $clog2(window),PC_SIZE = 1024,PC_WIDTH=$clog2(PC_SIZE))
-(current_trace_addr,recent_trace_value,recent_trace_value_PC,trace_value_PC_confidence,enable,clk,reset,
+(current_trace_addr,recent_trace_value,recent_trace_value_PC,trace_value_PC_stride_confidence,enable,clk,reset,
 pointer_array_confidence_in,pointer_array_confidence_out,finish);
     input wire [63:0] current_trace_addr;
     input wire [63:0] recent_trace_value;//这里要传进的是一系列recent_trace_value
     input wire [63:0] recent_trace_value_PC;// value值源自的指令PC,可以和value一起存为128位数
-    input wire [63:0] trace_value_PC_confidence;//PC||mem_addr||value||8*confidence一起存，同时存进recent里
+    input wire [63:0] trace_value_PC_stride_confidence;//PC||mem_addr||value||8*confidence一起存，同时存进recent里
     input wire enable;
     input wire clk;
     input wire reset;
@@ -60,7 +60,7 @@ pointer_array_confidence_in,pointer_array_confidence_out,finish);
             end
             2'b01:
             begin
-                if(trace_value_PC_confidence[15] == 1)//符合指针数组型
+                if(trace_value_PC_stride_confidence[15] == 1)//符合指针数组型
                 begin
                     pointer_array_confidence_out <= pointer_array_confidence_in + 1;
                     if (pointer_array_confidence_out[9] == 1)
