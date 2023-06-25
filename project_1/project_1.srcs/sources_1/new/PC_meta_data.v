@@ -60,13 +60,15 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
     output reg [15:0] stride_confidence_out;
     output reg [15:0] struct_pointer_confidence_out;
     output reg read_finish;
-    reg [WIDTH-1:0] array [0:PC_SIZE-1][0:10];//PC||mem_addr||value||8*confidence一起存，同时存进recent里
+    reg [WIDTH-1:0] array [0:PC_SIZE-1][0:11];//PC||mem_addr||value||8*confidence||count一起存，同时存进recent里
     reg [15:0] hash;
     reg [15:0] index;
     reg [2:0] write_state;
     reg [1:0] read_state;
-    reg [10:0] initial_count1;
-    reg [3:0] initial_count2;
+    reg [10:0] initial_count;
+    reg [WIDTH-1:0] min_count;
+    reg [10:0] find_min_count;
+    reg [15:0] min_index;
     always@(*)
     begin
         hash <= current_trace_PC[15:0]^current_trace_PC[31:16]^current_trace_PC[47:32]^current_trace_PC[63:48];
@@ -77,27 +79,35 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
         begin
             write_finish <= 0;
             read_finish <= 0;
-            initial_count1 <= 0;
-            initial_count2 <= 0;
+            initial_count <= 0;
+            write_state <= 3'b000;
+            min_count <= 64'd18446744073709551615;
         end
         if(write)
         begin
-            write_state <= 3'b000;
+            write_state <= 3'b001;
             index <= hash;
         end
         case(write_state)
         3'b000://初始化所有的array元素为0
         begin
-            array[initial_count1][initial_count2] <= 0;
-            initial_count2 <= initial_count2 + 1;
-            if (initial_count2 == 11 && initial_count1 != PC_SIZE)
+            array[initial_count][0] <= 0;
+            array[initial_count][1] <= 0;
+            array[initial_count][2] <= 0;
+            array[initial_count][11] <= 0;
+            //置信计数器初始设置为3
+            array[initial_count][3] <= 64'd3;
+            array[initial_count][4] <= 64'd3;
+            array[initial_count][5] <= 64'd3;
+            array[initial_count][6] <= 64'd3;
+            array[initial_count][7] <= 64'd3;
+            array[initial_count][8] <= 64'd3;
+            array[initial_count][9] <= 64'd3;
+            array[initial_count][10] <= 64'd3;
+            initial_count <= initial_count + 1;
+            if (initial_count == PC_SIZE)
             begin
-                initial_count1 <= initial_count1 +1;
-                initial_count2 <= 0;
-            end
-            else if (initial_count2 == 11 && initial_count1 == PC_SIZE)
-            begin
-                write_state <= 3'b001;
+                write_state <= 3'b011;
             end
         end
         3'b001://找到PC应该存放的位置
@@ -107,6 +117,7 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
                 array[index][0] <= current_trace_PC;
                 array[index][1] <= current_trace_addr;
                 array[index][2] <= current_trace_value;
+                array[index][11] <= array[index][11] + 1; 
                 write_state <= 3'b010;
             end
             else
@@ -118,9 +129,9 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
                 end
                 else if (index == hash - 1)//没有合适的位置则考虑驱逐出现次数最少的PC的元数据
                 begin
-                    
+                    write_state <= 3'b100;
+                    find_min_count <= 0;
                 end
-                
             end
         end
         3'b010://接收confidence
@@ -168,6 +179,20 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
             write_finish <= 1;
         end
         3'b100://驱逐出现次数最少的PC占据元数据的位置
+        begin
+            if (array[find_min_count][11] < min_count)
+            begin
+                min_count <= array[find_min_count][11];
+                min_index <= find_min_count;
+            end
+            find_min_count <= find_min_count + 1;
+            if (find_min_count == PC_SIZE)
+            begin
+                index <= min_index;
+                write_state <= 3'b101;
+            end
+        end
+        3'b101:
         begin
             
         end
