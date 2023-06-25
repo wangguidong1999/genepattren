@@ -192,15 +192,19 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
                 write_state <= 3'b101;
             end
         end
-        3'b101:
+        3'b101://替换最小
         begin
-            
+            array[index][0] <= current_trace_PC;
+            array[index][1] <= current_trace_addr;
+            array[index][2] <= current_trace_value;
+            array[index][11] <= array[index][11] + 1; 
+            write_state <= 3'b010;
         end
         endcase
         if(read)
         begin
             read_state <= 2'b00;
-            index <= hash;
+            index <= 0;
         end
         case(read_state)
         2'b00:
@@ -215,6 +219,7 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
                 static_confidence_out <= array[index][8];
                 stride_confidence_out <= array[index][9];
                 struct_pointer_confidence_out <= array[index][10];
+                read_state <= 2'b11;
             end
             else
             begin
@@ -224,7 +229,26 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
         2'b01:
         begin
             index <= index + 1;
-            
+            if(index == PC_SIZE)
+            begin
+                read_state <= 2'b10;//没找到此PC的元数据
+            end
+        end
+        2'b10:
+        begin
+            pointer_array_confidence_out <= 64'd3;
+            indirect_confidence_out <= 64'd3;
+            pointer_chase_confidence_out <= 64'd3;
+            pointer_confidence_out <= 64'd3;
+            regional_random_confidence_out<= 64'd3;
+            static_confidence_out <= 64'd3;
+            stride_confidence_out <= 64'd3;
+            struct_pointer_confidence_out <= 64'd3;
+            read_state <= 2'b11;
+        end
+        2'b11:
+        begin
+            read_finish <= 1;
         end
         endcase
     end
