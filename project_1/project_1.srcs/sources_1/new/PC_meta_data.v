@@ -65,7 +65,7 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
     reg [15:0] hash;
     reg [15:0] index;
     reg [2:0] write_state;
-    reg [1:0] read_state;
+    reg [2:0] read_state;
     reg [10:0] initial_count1;
     reg [10:0] initial_count2;
     reg [WIDTH-1:0] min_count;
@@ -241,15 +241,15 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
         endcase
         if(read)
         begin
-            read_state <= 2'b00;
+            read_state <= 3'b000;
             index <= 0;
         end
-        case(read_state)
-        2'b00:
+        case(read_state)//只输出置信计数器
+        3'b000:
         begin
             if (array[index][0][0] == current_trace_PC)
             begin
-                recent_trace_value <= array[index][0][2];
+                read_state <= 3'b011;
                 pointer_array_confidence_out <= array[index][0][3];
                 indirect_confidence_out <= array[index][0][4];
                 pointer_chase_confidence_out <= array[index][0][5];
@@ -258,24 +258,26 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
                 static_confidence_out <= array[index][0][8];
                 stride_confidence_out <= array[index][0][9];
                 struct_pointer_confidence_out <= array[index][0][10];
-                read_state <= 2'b11;
             end
             else
             begin
-                read_state <= 2'b01;
+                read_state <= 3'b001;
             end
         end
-        2'b01:
+        3'b001:
         begin
             index <= index + 1;
             if(index == PC_SIZE)
             begin
-                read_state <= 2'b10;//没找到此PC的元数据
+                read_state <= 3'b010;//没找到此PC的元数据
+            end
+            else
+            begin
+                read_state <= 3'b000;//继续回到000状态找到符合的PC
             end
         end
-        2'b10:
+        3'b010:
         begin
-            recent_trace_value <= 0;
             pointer_array_confidence_out <= 64'd3;
             indirect_confidence_out <= 64'd3;
             pointer_chase_confidence_out <= 64'd3;
@@ -284,9 +286,9 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
             static_confidence_out <= 64'd3;
             stride_confidence_out <= 64'd3;
             struct_pointer_confidence_out <= 64'd3;
-            read_state <= 2'b11;
+            read_state <= 3'b011;
         end
-        2'b11:
+        3'b011:
         begin
             read_finish <= 1;
         end
