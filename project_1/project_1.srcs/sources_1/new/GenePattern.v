@@ -30,7 +30,16 @@ module GenePattern#(parameter DATA_WIDTH=64)
     reg PC_meta_data_reset;
     reg indirect_pattern_reset;
     //confidenceµÄ¶Á³ö
-
+    wire [15:0] pointer_array_confidence;
+    wire [15:0] indirect_confidence;
+    wire [15:0] pointer_chase_confidence;
+    wire [15:0] pointer_confidence;
+    wire [15:0] regional_random_confidence;
+    wire [15:0] static_confidence;
+    wire [15:0] stride_confidence;
+    wire [15:0] struct_pointer_confidence;
+    
+    
 
 
 endmodule
