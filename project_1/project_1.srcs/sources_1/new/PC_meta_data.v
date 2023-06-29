@@ -213,7 +213,7 @@ stride_confidence_out,struct_pointer_confidence_out,read_finish);
             array[index][0][0] <= current_trace_PC;
             array[index][0][1] <= current_trace_addr;
             array[index][0][2] <= current_trace_value;
-            array[index][0][11] <= array[index][0][11] + 1; 
+            array[index][0][11] <= 1; 
             write_state <= 3'b010;
         end
         3'b110://index处已经记录了同一个PC的数据，现在需要找到合适的空位
